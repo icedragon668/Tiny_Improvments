@@ -1,0 +1,25 @@
+.right {
+    float: right;
+    font-size: 18px;
+    padding-top: 10px
+}
+
+h4 {
+    padding-left: 10px
+}
+
+h5 {
+    padding-left: 10px
+}
+
+.card-body {
+    text-align: center
+}
+
+.card-footer {
+    text-align: right
+}
+
+.modal-backdrop {
+    background-image: url(../kudos\ \(2\).jpg);
+ }
