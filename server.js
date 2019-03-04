@@ -3,7 +3,15 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const mongoose = require('mongoose');
+///
+var mongo = require("mongodb").MongoClient;
 
+var dataURL = process.env.MONGOLAB_URI;
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/HelloMongoose';
+///
 const User = require('./models/User')
 const UserJSON = require('./UserJSON')
 const Kudos = require('./models/Kudos')
@@ -14,7 +22,8 @@ app.use(express.json());
 app.use(express.static("public")); //alter path as needed
 
 ///
-let uri = 'mongodb://heroku_nhmm7mp8:39j5l2tco9e2gaao7jlcvd0426@ds211083.mlab.com:11083/heroku_nhmm7mp8/kudos_db';
+const uri = "mongodb+srv://root:rootyroot@kudos-db-bdr0d.mongodb.net/kudos-db?retryWrites=true"
+// let uri = 'mongodb://heroku_nhmm7mp8:39j5l2tco9e2gaao7jlcvd0426@ds211083.mlab.com:11083/heroku_nhmm7mp8/kudos_db';
 
 mongoose.connect(uri, {useNewUrlParser: true });
 
